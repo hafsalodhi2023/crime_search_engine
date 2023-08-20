@@ -71,5 +71,7 @@ window.onload = () => {
 
   resetBtn.onclick = function () {
     resultTableBody.innerHTML = "";
+    accused.value = "";
+    parentag.value = "";
   };
 };
