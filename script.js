@@ -67,4 +67,9 @@ window.onload = () => {
       checkData();
     }
   };
+  let resetBtn = document.getElementById("reset_btn");
+
+  resetBtn.onclick = function () {
+    resultTableBody.innerHTML = "";
+  };
 };
