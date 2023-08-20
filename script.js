@@ -13,11 +13,13 @@ async function checkData() {
         accused.value
       )}&Parentage=${encodeURIComponent(parentag.value)}`
     );
-
     const actualData = await response.json();
 
     if (actualData.data.length === 0) {
       alert("No data found.");
+      resultTableBody.innerHTML = "";
+    } else if (accused.value === "" && parentag.value === "") {
+      alert("Please Enter Name!");
       resultTableBody.innerHTML = "";
     } else {
       displayDataInTable(actualData.data);
