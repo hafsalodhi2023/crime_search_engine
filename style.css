@@ -125,6 +125,11 @@ button:hover {
   background-color: rgb(250, 85, 85);
 }
 
+#preloader {
+  width: 25%;
+  display: none;
+}
+
 @media print {
   .input-div {
     display: none;

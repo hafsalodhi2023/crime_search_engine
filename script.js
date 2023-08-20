@@ -2,7 +2,15 @@ const accused = document.querySelector("#accused");
 const parentag = document.querySelector("#parentag");
 const searchBtn = document.querySelector("#searchBtn");
 const resultTableBody = document.querySelector("#resultTableBody");
+const preloader = document.querySelector("#preloader");
 
+function preLoaderDisplayBlock() {
+  preloader.style.display = "block";
+}
+
+function preLoaderDisplayNone() {
+  preloader.style.display = "none";
+}
 async function checkData() {
   let url =
     "https://script.google.com/macros/s/AKfycbxQa3obRjeXPay3UDHlEUIQ4pJ4wawTJAhbqSO47YF13tIJ5EqVSxxe9urQ67gxUWS__w/exec";
@@ -16,12 +24,15 @@ async function checkData() {
     const actualData = await response.json();
 
     if (actualData.data.length === 0) {
+      preLoaderDisplayNone();
       alert("No data found.");
       resultTableBody.innerHTML = "";
     } else if (accused.value === "" && parentag.value === "") {
+      preLoaderDisplayNone();
       alert("Please Enter Name!");
       resultTableBody.innerHTML = "";
     } else {
+      preLoaderDisplayNone();
       displayDataInTable(actualData.data);
     }
   } catch (error) {
@@ -34,6 +45,7 @@ function displayDataInTable(data) {
 
   data.forEach((item) => {
     const row = document.createElement("tr");
+    preLoaderDisplayNone();
     row.innerHTML = `
       <td>${item.arrestID}</td>
       <td>${item.reportDate}</td>
@@ -56,15 +68,21 @@ window.onload = () => {
 
   searchBtn.addEventListener("click", () => {
     checkData();
+    preLoaderDisplayBlock();
+    resultTableBody.innerHTML = "";
   });
   parentag.onkeydown = () => {
     if (event.key === "Enter") {
       checkData();
+      preLoaderDisplayBlock();
+      resultTableBody.innerHTML = "";
     }
   };
   accused.onkeydown = () => {
     if (event.key === "Enter") {
       checkData();
+      preLoaderDisplayBlock();
+      resultTableBody.innerHTML = "";
     }
   };
   let resetBtn = document.getElementById("reset_btn");
