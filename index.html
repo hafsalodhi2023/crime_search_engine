@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>DIGP SOUTH ZONE KARACHI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo-div">
+        <img src="logo.png" alt="" />
+      </div>
+      <div class="table-div">
+        <h1 style="color: rgb(0, 99, 212)">CRIME RECORD OF ARRESTED ACCUSED</h1>
+        <h4 style="color: rgb(145, 145, 145)">DIGP SOUTH ZONE KARACHI</h4>
+        <p style="font-size: 0.8rem; color: gray; user-select: none">
+          Copyright © DIGP South Zone Karachi. All Rights Reserved
+        </p>
+        <div class="input-div">
+          <input
+            type="text"
+            id="accused"
+            placeholder="NAME OF ACCUSED"
+            title="Please type the accused middle name for example  Saleem instead of Muhammad Saleem Khan"
+          />
+          <input
+            type="text"
+            id="parentag"
+            placeholder="PARENTAGE"
+            title="Please type the parentage middle name for example  Saleem instead of Muhammad Saleem Khan"
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Arrest ID</th>
+              <th>Report Date</th>
+              <th>Arrest Date</th>
+              <th>Accused</th>
+              <th>Parentage</th>
+              <th>Arrested By PS</th>
+              <th>FIR No</th>
+              <th>Under Section</th>
+              <th>Police Station</th>
+            </tr>
+          </thead>
+          <tbody id="resultTableBody"></tbody>
+        </table>
+      </div>
+      <script src="script.js"></script>
+    </header>
+  </body>
+</html>
