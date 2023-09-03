@@ -13,7 +13,7 @@ function preLoaderDisplayNone() {
 }
 async function checkData() {
   let url =
-    "https://script.google.com/macros/s/AKfycbxQa3obRjeXPay3UDHlEUIQ4pJ4wawTJAhbqSO47YF13tIJ5EqVSxxe9urQ67gxUWS__w/exec";
+    "https://script.google.com/macros/s/AKfycbyzubZ-W-B42ojG7JEsUzzgr76geaCEiKFE7nmdj4szMiqYlB5ydN_0N0JDziqpOsVOMQ/exec";
 
   try {
     let response = await fetch(
